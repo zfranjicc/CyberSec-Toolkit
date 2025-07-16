@@ -1,3 +1,22 @@
+# John-The-Ripper---Cheatsheet-
+Included example commands for using unshadow to merge passwd and shadow files. Added explanation of formats and how to crack system hashes using John the Ripper with wordlists like rockyou.txt.
+
+---
+
+## 📚 Table of Contents
+
+- 🧠 [John the Ripper Cheat Sheet](#john-the-ripper-cheat-sheet)
+- 🔑 [Basic John Usage](#basic-john-usage)
+- 🧪 [Cracking Linux System Hashes](#cracking-linux-system-hashes-etcpasswd-etcshadow)
+- 🏆 [Top John the Ripper Commands](#top-john-the-ripper-commands)
+- ⚙️ [Example Hash Formats](#example-hash-formats)
+- 💬 [Author's Note](#authors-note)
+
+
+
+---
+
+
 # 🧠 John the Ripper Cheat Sheet
 Personal cheat sheet with John the Ripper commands used in CTFs and pentesting.
 
@@ -29,16 +48,25 @@ unshadow passwd shadow > unshadowed.txt` | Merge `/etc/passwd` and `/etc/shadow`
 john --wordlist=/usr/share/wordlists/rockyou.txt --format=sha512crypt unshadowed.txt` | Crack unshadowed Linux hashes |
 
 ---
+
+
 ## 🔎How to find Hash ID?
+
+First: Open directory ` hash-identifier` !
 ```
 git clone https://github.com/blackploit/hash-identifier.git
 ```
 ```
 python3 hashid.py
-
+```
+or
+```
+python3 hash-id.py
 ```
 
+
 ---
+
 
 ## 🏆 Top John the Ripper Commands
 
