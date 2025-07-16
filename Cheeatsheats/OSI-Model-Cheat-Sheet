@@ -1,0 +1,102 @@
+# 🌐 OSI Model Cheat Sheet
+
+OSI (Open Systems Interconnection) model je konceptualni model koji opisuje kako se podaci prenose kroz mrežu u 7 slojeva. Svaki sloj ima svoju funkciju i komunicira s odgovarajućim slojem na drugom uređaju.
+
+---
+
+## 📚 Table of Contents
+
+- 🧱 [Overview of OSI Layers](#overview-of-osi-layers)
+- 🔢 [Layer-by-Layer Breakdown](#layer-by-layer-breakdown)
+- 🧠 [Mnemonic to Remember the OSI Layers](#mnemonic-to-remember-the-osi-layers)
+- ⚙️ [Real Protocols & Devices Per Layer](#real-protocols--devices-per-layer)
+- ⚠️ [Why It Matters in Cybersecurity](#why-it-matters-in-cybersecurity)
+
+---
+
+## 🧱 Overview of OSI Layers
+
+| Layer | Name              | Function Summary                          |
+|-------|-------------------|-------------------------------------------|
+| 7     | Application       | End-user interface, app services          |
+| 6     | Presentation      | Data format, encryption/decryption        |
+| 5     | Session           | Connection management, sessions           |
+| 4     | Transport         | Reliable delivery (TCP/UDP), ports        |
+| 3     | Network           | IP addressing, routing                    |
+| 2     | Data Link         | MAC addressing, frames, switches          |
+| 1     | Physical          | Cables, NICs, bits on the wire            |
+
+---
+
+## 🔢 Layer-by-Layer Breakdown
+
+### 🔹 Layer 7 – Application
+- Closest to the end-user
+- Interfaces directly with software (e.g., browsers, email)
+- Protocols: HTTP, FTP, SMTP, DNS
+
+### 🔹 Layer 6 – Presentation
+- Data translation (syntax), encryption, compression
+- Formats: JPEG, MP4, SSL/TLS
+
+### 🔹 Layer 5 – Session
+- Establishes, maintains, and ends sessions
+- Examples: NetBIOS, RPC, PPTP
+
+### 🔹 Layer 4 – Transport
+- Reliable or best-effort delivery
+- Flow control, segmentation
+- Protocols: TCP, UDP
+
+### 🔹 Layer 3 – Network
+- Logical addressing, routing
+- Devices: Routers
+- Protocols: IP, ICMP
+
+### 🔹 Layer 2 – Data Link
+- Physical addressing (MAC), error detection
+- Devices: Switches, bridges
+- Protocols: Ethernet, PPP
+
+### 🔹 Layer 1 – Physical
+- Transmission of raw bits
+- Devices: Cables, hubs, NICs
+- Standards: RJ45, Fiber, Voltage levels
+
+---
+
+## 🧠 Mnemonic to Remember the OSI Layers
+
+From **Layer 7 to 1** (Top → Bottom):
+
+> **"All People Seem To Need Data Processing"**
+
+From **Layer 1 to 7** (Bottom → Top):
+
+> **"Please Do Not Throw Sausage Pizza Away"**
+
+---
+
+## ⚙️ Real Protocols & Devices Per Layer
+
+| Layer | Example Protocols         | Example Devices             |
+|-------|---------------------------|-----------------------------|
+| 7     | HTTP, FTP, SMTP, DNS      | Browsers, Email Clients     |
+| 6     | SSL/TLS, JPEG, MPEG       | Application Gateways        |
+| 5     | NetBIOS, PPTP, RPC        | Session Managers            |
+| 4     | TCP, UDP                  | Firewalls                   |
+| 3     | IP, ICMP, IPSec           | Routers                     |
+| 2     | Ethernet, ARP, PPP        | Switches, NICs              |
+| 1     | Ethernet Cables, RF       | Hubs, Repeaters, Cables     |
+
+---
+
+## ⚠️ Why It Matters in Cybersecurity
+
+- 🔐 **Layered security**: Each layer can have its own security controls.
+- 🕵️‍♂️ **Packet analysis**: Tools like Wireshark work based on OSI layers.
+- 🚨 **Attack detection**: Helps identify where attacks occur (e.g., ARP spoofing = Layer 2, DDoS = Layer 4).
+
+---
+
+✅ **Use the OSI model to better understand how networks function and how to defend them. Mastering it is essential for ethical hacking, penetration testing, and network troubleshooting.**
