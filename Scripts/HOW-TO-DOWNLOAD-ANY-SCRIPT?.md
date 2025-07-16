@@ -1,4 +1,4 @@
-How to download any script
+# How to download any script?
 
 
 ## Download and run Auto Update Kali Linux
