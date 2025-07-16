@@ -1,0 +1,41 @@
+# 🔐 NTLM Hash Format – Beginner's Guide
+
+## 📄 What is an NTLM Hash?
+
+**NTLM (NT LAN Manager)** is Microsoft's authentication protocol that uses the **NT hash** (also known as NTLMv1 hash) to store user passwords in Windows systems.
+
+When passwords are dumped from the Windows SAM database (using tools like `samdump2`, `pwdump`, or `secretsdump.py`), the output looks like this:`username:uid:LM_hash:NT_hash:::`
+
+
+---
+
+
+## 🔍 Example of an NTLM Hash Line
+`Jon:1000:aad3b435b51404eeaad3b435b51404ee:ffb43f0de35be4d9917ac0cc8ad57f8d:::`
+
+
+
+---
+
+
+# 🔐 NTLM Hash Format – Summary Table
+
+| Term / Field           | Example / Value                                         | Explanation and Additional Info                                                                                  |
+|-----------------------|--------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| **Example hash line**  | `balblaa:1000:aad3b435b51404eeaad3b435b51404ee:ffb43f0de35be4d9917ac0cc8ad57f8d:::` | Format obtained by dumping Windows passwords from the SAM database using tools like `samdump2`, `pwdump`, etc.    |
+| **Username**           | `balblaa`                                                  | Windows account username                                                                                          |
+| **UID**                | `1000`                                                 | User ID, not important for cracking                                                                               |
+| **LM hash**            | `aad3b435b51404eeaad3b435b51404ee`                     | Legacy LAN Manager hash, usually a placeholder; outdated and mostly ignored today                                 |
+| **NT hash (NTLM)**     | `ffb43f0de35be4d9917ac0cc8ad57f8d`                     | Actual password hash; uses MD4 algorithm on UTF-16LE encoded password                                            |
+| **NT hash length**     | 32 hexadecimal characters                              | Same length as MD5 but different algorithm and encoding                                                         |
+| **LM hash algorithm**  | Legacy LAN Manager                                     | Weak and deprecated, often disabled or replaced                                                                  |
+| **NT hash algorithm**  | MD4 on UTF-16LE password                               | Main Windows hashing algorithm; relatively weak against modern brute-force attacks                               |
+| **How to identify**    | 4th field in format `username:uid:LM_hash:NT_hash:::`  | Focus on the NT hash (4th field), ignore the LM hash                                                             |
+| **Cracking tool**      | John the Ripper                                       | Use command: `john --format=NT --wordlist=/path/to/wordlist.txt hash.txt`                                        |
+| **Result check**       | `john --show hash.txt`                                | Displays cracked passwords                                                                                        |
+| **Why not MD5?**       | NT hash uses MD4 and different encoding               | Though NT hash looks like MD5 (same length), it must not be treated as MD5 when cracking                         |
+| **Security status**    | Weak and fast to brute-force                           | NTLM has been replaced by more secure protocols like NTLMv2 and Kerberos, but NTLM is still in use on older systems |
+
+
+
+
