@@ -15,7 +15,7 @@ TOKENS = [
 # ID Your Telegram Group
 CHAT_ID = -112613668924
 
-# lista emojija
+# Emoji List
 EMOJIS = ["😏","😎","🔥","💸","👀","🍵","🚀","👌"]
 
 # Conversation in order
