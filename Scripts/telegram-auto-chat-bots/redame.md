@@ -118,8 +118,8 @@ To stop the script, press `Ctrl + C`.
 
 ---
 
-## License
-This project is open-source. You can modify it for personal or educational purposes.  
-Do not use it for spamming or violating Telegram's Terms of Service.
+> ⚠️ **Disclaimer:** This cheatsheet is intended for educational purposes only.  
+> It is meant to support learning and ethical use of cybersecurity tools and techniques.  
+> Unauthorized access or misuse of systems is illegal and strictly discouraged.
 
 
