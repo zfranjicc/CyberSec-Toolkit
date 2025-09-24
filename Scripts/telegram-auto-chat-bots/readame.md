@@ -54,8 +54,9 @@ The script needs the Python library `python-telegram-bot` to connect to Telegram
 
 ### Step 1 – Clone the repository
 ```
-git clone https://github.com/your-username/telegram-auto-chat.git
-cd telegram-auto-chat
+git clone https://github.com/zfranjicc/CyberSec-Toolkit.git
+cd CyberSec-Toolkit/Scripts/telegram-auto-chat-bots
+python3 main.py
 ```
 
 
