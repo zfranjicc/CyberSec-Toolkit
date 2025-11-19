@@ -1,42 +1,45 @@
+# CAPA Output – What to Analyze
 
-# WHAT IS IMPORTANT TO ANALYZE IN CAPA OUTPUT
+## 1. Basic File Information
+- Hashes (MD5 / SHA1 / SHA256)  
+- OS, file format, architecture  
+Used for sample identification and verification.
 
-### 1. Basic File Information
-- Hashes (MD5/SHA1/SHA256)
-- OS, file format, architecture
-Used to verify the sample and confirm its identity.
-
-### 2. ATT&CK Tactics and Techniques
+## 2. MITRE ATT&CK Techniques
 Examples: T1027, T1059.001, T1053.005  
-Shows which offensive techniques the sample uses (obfuscation, execution, persistence, task creation).
+Shows which techniques the malware implements (obfuscation, execution, persistence, etc.).
 
-### 3. MBC Objective and Behavior
-Examples: DATA::Encode Data  
-ANTI-STATIC ANALYSIS::Executable Code Obfuscation  
-Describes high-level malware purposes and behaviors.
+## 3. MBC Objective & Behavior
+Examples: DATA :: Encode Data, ANTI-STATIC :: Executable Code Obfuscation  
+Explains malware behavior, capabilities, and purpose.
 
-### 4. Micro-Behaviors
-Examples: Create Process, Allocate Memory, Read/Write/Delete File  
-Low-level capabilities which show what the binary can do internally.
+## 4. Micro-Behaviors
+- Process creation  
+- Memory allocation  
+- File read/write/delete  
+Low-level actions the malware performs.
 
-### 5. Persistence
+## 5. Persistence Indicators
 Example: Scheduled Task  
-Indicates the malware remains active after reboot.
+Shows the ability to remain active across reboots.
 
-### 6. Communication
-Example: HTTP Communication  
-Shows the malware can send or receive data (possible C2).
+## 6. Communication Capabilities
+Example: HTTP communication  
+Indicates possible command-and-control or data exfiltration.
 
-### 7. Anti-Analysis / Evasion
-Examples: VM Detection, Argument Obfuscation, Stack Strings  
-Indicates attempts to evade sandboxes, debuggers, and static analysis tools.
+## 7. Anti-Analysis / Evasion
+Examples: VM detection, argument obfuscation, stack strings  
+Shows attempts to evade sandboxes, debuggers, and static/static analysis.
 
-## SHORT INTERPRETATION OF YOUR SAMPLE
+---
 
-- Creates processes → can run commands, PowerShell or other executables.
-- Allocates memory → may unpack or inject code.
-- Performs file operations → can read, write, delete files and create directories.
-- Persistence via Scheduled Tasks → survives reboot.
-- HTTP communication → possible command-and-control traffic.
-- Evasion techniques → obfuscation and virtualization/sandbox detection.
-- MAEC category "launcher" → likely works as a loader for another payload.
+# Short Interpretation Example
+- Creates processes → can launch commands, scripts, or other binaries.  
+- Allocates memory → possible unpacking or code injection.  
+- File operations → reads, writes, deletes, or creates directories.  
+- Persistence via Scheduled Tasks → stays active.  
+- HTTP communication → can send and receive data.  
+- Evasion and obfuscation → avoids analysis.  
+- MAEC: "Launcher" → acts as a loader for another payload.
+
+Summary: A suspicious loader with evasion, persistence, and external communication capabilities.
